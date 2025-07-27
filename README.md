@@ -49,23 +49,19 @@ NEWS_API_KEY=your_news_api_key # Get one from newsapi.org
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
 TELEGRAM_CHAT_ID=your_telegram_chat_id
 
-# Webhook Notification (Optional)
-WEBHOOK_URL=your_webhook_url
-```
+# Database settings
+DATABASE_URL=sqlite:///trading_bot.db
 
-**Bot Configuration in `main.py`:**
-Adjust the `config` dictionary in the `main()` function of `main.py` to set trading parameters:
+# Trading settings
+MAX_RISK_PER_TRADE=0.02
+MAX_TOTAL_RISK=0.10
+MIN_CONFIDENCE=0.70
 
-```python
-config = {
-    'exchange': 'binance',      # e.g., 'binance', 'ftx', 'kraken'
-    'symbol': 'BTC/USDT',       # Trading pair
-    'timeframe': '1h',          # Candlestick timeframe (e.g., '1m', '5m', '1h', '1d')
-    'sandbox': True,            # Set to False for live trading
-    'max_risk_per_trade': 0.02, # Max 2% risk per trade
-    'max_total_risk': 0.1,      # Max 10% total exposure
-    'min_confidence': 0.7       # Minimum signal confidence to execute trades
-}
+# Exchange settings
+USE_SANDBOX=true
+DEFAULT_SYMBOL=BTC/USDT
+DEFAULT_TIMEFRAME=1h
+
 ```
 
 ## Usage

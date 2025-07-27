@@ -1,3 +1,4 @@
+import os
 import ccxt
 import pandas as pd
 import numpy as np
@@ -822,14 +823,16 @@ def main():
     """Main function to run the trading bot"""
 
     # Configuration
+    load_dotenv() # Load environment variables from .env file
+
     config = {
-        'exchange': 'binance',
-        'symbol': 'BTC/USDT',
-        'timeframe': '1h',
-        'sandbox': True,  # Use testnet
-        'max_risk_per_trade': 0.02,  # 2% risk per trade
-        'max_total_risk': 0.1,  # 10% total risk
-        'min_confidence': 0.7  # Minimum confidence to execute trades
+        'exchange': os.getenv('EXCHANGE', 'binance'),
+        'symbol': os.getenv('SYMBOL', 'BTC/USDT'),
+        'timeframe': os.getenv('TIMEFRAME', '1h'),
+        'sandbox': os.getenv('SANDBOX', 'True').lower() == 'true',  # Use testnet
+        'max_risk_per_trade': float(os.getenv('MAX_RISK_PER_TRADE', 0.02)),  # 2% risk per trade
+        'max_total_risk': float(os.getenv('MAX_TOTAL_RISK', 0.1)),  # 10% total risk
+        'min_confidence': float(os.getenv('MIN_CONFIDENCE', 0.7))  # Minimum confidence to execute trades
     }
 
     # Log loaded configuration values
