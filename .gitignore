@@ -1,0 +1,20 @@
+# Environment variables
+.env
+
+# Database files
+*.db
+
+# Log files
+*.log
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.venv/
+
+# Database
+*.db
+
