@@ -1,0 +1,35 @@
+# Core trading libraries
+ccxt>=4.1.5
+pandas>=1.5.0
+numpy>=1.21.0
+
+# Technical analysis (pilih salah satu)
+# ta-lib>=0.4.25  # Uncomment if you can install ta-lib
+ta>=0.10.2
+finta>=1.3
+
+# Data visualization
+matplotlib>=3.5.0
+plotly>=5.10.0
+mplfinance>=0.12.9
+
+# Web requests and APIs
+requests>=2.28.0
+python-dotenv>=0.19.0
+
+# Database
+# sqlite3 is built-in to Python
+
+# Scheduling and utilities
+schedule>=1.1.0
+python-telegram-bot>=20.0  # For notifications (optional)
+
+# Machine Learning (optional)
+scikit-learn>=1.1.0
+# tensorflow>=2.10.0  # Uncomment if you want ML features
+# keras>=2.10.0
+
+# Development and testing
+pytest>=7.0.0
+jupyter
+colorlog
